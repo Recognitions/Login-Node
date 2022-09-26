@@ -58,11 +58,14 @@ main form input{
     color: var(--tertiary);
     background-color: transparent;
     border: 0px solid black;
-    border-bottom: 2px solid var(--tertiary);
+    border-bottom: 2px solid gray;
     font-size: 20px;
     margin: 5px;
     transition: 0.2s;
-}main form input[type=submit]{
+}main form input:focus{
+    border-bottom-color: var(--tertiary);
+}
+main form input[type=submit]{
     border: none;
     margin-top: 10px;
     cursor: pointer;

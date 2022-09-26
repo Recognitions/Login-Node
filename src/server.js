@@ -13,10 +13,18 @@ app.use(cors())
 const http = require('http')
 const server = http.createServer(app)
 
-app.get('/patients',(req,res)=>{
-    const select = "SELECT * FROM pacientes"
+app.get('/register/:firstName/:lastName/:email/:password/:birth',(req,res)=>{
+    const md5 = require("blueimp-md5")
+    const firstName = req.params.firstName
+    const lastName = req.params.lastName
+    const email = req.params.email
+    const password = req.params.password
+    const birth = req.params.birth
+
+    const select = `INSERT INTO users(firstName,lastName,email,password,birth) VALUES('${firstName}','${lastName}','${email}','${md5(password)}','${birth}')`
     con.query(select,(err,rows,fields)=>{
         res.send(rows)
+        console.log(rows)
     })
 })
 
