@@ -19,8 +19,8 @@ async function register(e){
     
     if(query.data.affectedRows==1){
         e.target.reset()
-    }else if((query.data)[0].error){
-        console.log(alerts[(query.data).error])
+    }else if(query.data[0].error==0){
+        console.log(alerts[query.data[0].error])
     }
 }
 
