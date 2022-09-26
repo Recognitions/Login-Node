@@ -11,10 +11,10 @@ async function register(e){
         password: e.target[3].value,
         birth: e.target[4].value,
     }
-    
-    const insert = await api.get(`/register/${user.firstName}/${user.lastName}/${user.email}/${user.password}/${user.birth}`)
-    
-    e.target.reset()
+
+    const query = await api.get(`/register/${user.firstName}/${user.lastName}/${user.email}/${user.password}/${user.birth}`)
+    console.log(query.data)
+    //e.target.reset()
 }
 
 export default register

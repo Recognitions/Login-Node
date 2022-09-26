@@ -21,11 +21,19 @@ app.get('/register/:firstName/:lastName/:email/:password/:birth',(req,res)=>{
     const password = req.params.password
     const birth = req.params.birth
 
-    const select = `INSERT INTO users(firstName,lastName,email,password,birth) VALUES('${firstName}','${lastName}','${email}','${md5(password)}','${birth}')`
-    con.query(select,(err,rows,fields)=>{
-        res.send(rows)
-        console.log(rows)
+    const select = `SELECT * FROM users WHERE email='${email}'`
+    con.query(select,(err,rows,field)=>{
+        if(rows.length==0){
+            const insert = `INSERT INTO users(firstName,lastName,email,password,birth) VALUES('${firstName}','${lastName}','${email}','${md5(password)}','${birth}')`
+            con.query(insert,(err,rows,fields)=>{
+                res.send(rows)
+                console.log(rows)
+            })
+        }else{
+            res.send(["error"])
+        }
     })
+    
 })
 
 server.listen(3001, () => {
