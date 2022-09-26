@@ -1,6 +1,13 @@
+import Input from './Input'
+
 function Login(){
     return(
-        <h1>Login</h1>
+        <form id="login">
+            <h2>Login</h2>
+            <Input type="email" id="email" placeholder="E-mail"/>
+            <Input type="password" id="password" placeholder="Password"/>
+            <Input type="submit" id="submitlogin" value="Complete"/>
+        </form>
     )
 }
 

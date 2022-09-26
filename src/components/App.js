@@ -3,6 +3,7 @@ import Login from './Login'
 import Register from './Register'
 import Home from './Home'
 import Input from './Input'
+import Alert from "./Alert";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                 <Link to="/register"><Input type="button" value="Register"/></Link>
             </header>
             <main>
+                <Alert text=""/>
                 <Routes>
                     <Route exact path='/' element={<Home />}/>
                     <Route exact path='/login' element={<Login />}/>
