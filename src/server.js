@@ -30,7 +30,7 @@ app.get('/register/:firstName/:lastName/:email/:password/:birth',(req,res)=>{
                 console.log(rows)
             })
         }else{
-            res.send(["error"])
+            res.send([{error:0}])
         }
     })
     

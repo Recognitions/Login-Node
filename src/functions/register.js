@@ -1,5 +1,5 @@
 import api from './axios'
-
+import alerts from './alerts'
 
 async function register(e){
     e.preventDefault()
@@ -13,8 +13,15 @@ async function register(e){
     }
 
     const query = await api.get(`/register/${user.firstName}/${user.lastName}/${user.email}/${user.password}/${user.birth}`)
-    console.log(query.data)
+    
+    console.log((query.data))
     //e.target.reset()
+    
+    if(query.data.affectedRows==1){
+        e.target.reset()
+    }else if((query.data)[0].error){
+        console.log(alerts[(query.data).error])
+    }
 }
 
 export default register
