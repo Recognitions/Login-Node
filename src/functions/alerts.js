@@ -1,5 +1,6 @@
 const alerts = [
-    "Email já está em uso"
+    "Email já está em uso!",
+    "Success!"
 ]
 
 export default alerts

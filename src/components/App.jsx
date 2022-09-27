@@ -14,7 +14,8 @@ function App() {
                 <Link to="/register"><Input type="button" value="Register"/></Link>
             </header>
             <main>
-                <Alert text=""/>
+                <div id="alertsArea">
+                </div>
                 <Routes>
                     <Route exact path='/' element={<Home />}/>
                     <Route exact path='/login' element={<Login />}/>

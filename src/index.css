@@ -75,3 +75,27 @@ main form input[type=submit]{
     background-color: var(--tertiary);
     color: var(--primary);
 }
+
+#alert{
+    top: 20%;
+    left: 0px;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    flex-direction: column;
+    animation-name: alertOpacity;
+    animation-duration: 0.4s;
+    transition: 0s;
+}#alert h2{
+    background-color: black;
+    padding: 10px;
+    border: 2px solid var(--tertiary);
+    border-bottom-color: var(--secondary);
+    border-radius: 10px;
+}
+
+@keyframes alertOpacity {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
