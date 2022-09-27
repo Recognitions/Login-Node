@@ -38,7 +38,7 @@ main{
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    background-color: black;
+    background-color: var(--primary);
     border-top: 2px solid var(--secondary);
     color: var(--tertiary);
 }
@@ -57,7 +57,7 @@ main form h2{
 main form input{
     color: var(--tertiary);
     background-color: transparent;
-    border: 0px solid black;
+    border: 0px solid var(--primary);
     border-bottom: 2px solid gray;
     font-size: 20px;
     margin: 5px;
@@ -88,7 +88,7 @@ main form input[type=submit]{
     animation-duration: 0.4s;
     transition: 0s;
 }#alert h2{
-    background-color: black;
+    background-color: var(--primary);
     padding: 10px;
     border: 2px solid var(--tertiary);
     border-bottom-color: var(--secondary);

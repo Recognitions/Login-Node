@@ -13,6 +13,13 @@ app.use(cors())
 const http = require('http')
 const server = http.createServer(app)
 
+app.get('/login/:email/:password',(req,res)=>{
+    const email = req.params.email
+    const password = req.params.password
+
+    const select = `SELECT * FROM users WHERE email='${email}' AND password='${password}'`
+})
+
 app.get('/register/:firstName/:lastName/:email/:password/:birth',(req,res)=>{
     const md5 = require("blueimp-md5")
     const firstName = req.params.firstName
@@ -33,7 +40,6 @@ app.get('/register/:firstName/:lastName/:email/:password/:birth',(req,res)=>{
             res.send([{error:0}])
         }
     })
-    
 })
 
 server.listen(3001, () => {
